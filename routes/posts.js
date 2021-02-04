@@ -3,7 +3,7 @@ const controllers = require("../controllers/posts");
 
 const router = Router();
 
-// asbtract controllers to new file.
+// asbtract controllers
 router.get("/", (req, res) => {
   res.send("Home Directory");
 });
