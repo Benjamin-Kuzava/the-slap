@@ -5,9 +5,7 @@ import Layout from "../../components/shared/Layout/Layout";
 const Home = () => {
   return (
     <Layout>
-      <div>
-        <PostCard></PostCard>
-      </div>
+      <div></div>
     </Layout>
   );
 };
