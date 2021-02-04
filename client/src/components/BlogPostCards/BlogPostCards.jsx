@@ -1,7 +1,7 @@
 import React from "react";
-import "./PostCards.css";
+import "./BlogPostCards.css";
 
-const PostCards = () => {
+const BlogPostCards = () => {
   return (
     <div>
       <h1>Postcards</h1>
@@ -9,4 +9,4 @@ const PostCards = () => {
   );
 };
 
-export default PostCards;
+export default BlogPostCards;
