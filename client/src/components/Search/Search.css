@@ -9,9 +9,11 @@
 .search-input {
   font-size: 16px;
   letter-spacing: 0.1px;
-  border: 1px solid #ddd;
+  border: 0;
   border-radius: 4px;
   height: 70%;
+  padding: 1.2em;
+  outline-color: rgb(189, 187, 187);
 }
 
 .search-input::placeholder {
