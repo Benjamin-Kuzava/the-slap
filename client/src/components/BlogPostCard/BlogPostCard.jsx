@@ -1,5 +1,6 @@
 import React from "react";
 import "./BlogPostCard.css";
+import { Link } from "react-router-dom";
 
 const BlogPostCard = (props) => {
   return (
