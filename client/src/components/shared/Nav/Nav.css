@@ -21,6 +21,7 @@ nav {
 }
 
 .logo {
+  display: flex;
   font-family: "Lobster", cursive;
   text-align: center;
   font-size: 34px;
@@ -29,6 +30,7 @@ nav {
   flex: 1;
   max-width: 30vw;
   transition: 250ms all;
+  margin-top: 0.4em;
 }
 
 .logo:hover {

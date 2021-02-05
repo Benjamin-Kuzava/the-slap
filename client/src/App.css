@@ -4,7 +4,8 @@
   flex-direction: column;
 }
 body {
-  background-color: #fff9f1;
+  background-color: #ececec;
+  background-image: linear-gradient(#fff9f1, #ececec);
 }
 
 *,
