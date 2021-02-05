@@ -27,7 +27,7 @@ const BlogPostDetail = (props) => {
     <Layout>
       <div className="blog-detail">
         <h1>{post.title}</h1>
-        <img src={post.imgURL}></img>
+        <img src={post.imgURL} alt={post.title}></img>
         <h2>{post.description}</h2>
         <h3>{post.author}</h3>
         <div className="buttons">
