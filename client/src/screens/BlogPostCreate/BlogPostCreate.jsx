@@ -49,8 +49,6 @@ const BlogPostCreate = () => {
         />
         <textarea
           className="form-item"
-          name=""
-          id=""
           cols="30"
           rows="20"
           placeholder="Post here"
