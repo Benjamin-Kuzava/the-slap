@@ -18,6 +18,7 @@ const BlogPostCards = () => {
       {allPosts.map((post) => (
         <BlogPostCard
           key={post._id}
+          id={post._id}
           title={post.title}
           description={post.description}
           imgURL={post.imgURL}
