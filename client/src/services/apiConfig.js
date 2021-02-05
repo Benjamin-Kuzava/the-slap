@@ -2,15 +2,15 @@ import axios from "axios";
 
 let apiURL;
 
-const apiURL = {
+const apiURLs = {
   production: "https://the-slap-ruby.herokuapp.com/api",
   development: "http://localhost:3000/api",
 };
 
 if (window.location.hostname === "localhost") {
-  apiURL = api.development;
+  apiURL = apiURLs.development;
 } else {
-  apiURL = apiURL.production;
+  apiURL = apiURLs.production;
 }
 
 const api = axios.create({

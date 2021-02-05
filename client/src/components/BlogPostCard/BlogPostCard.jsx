@@ -1,18 +1,13 @@
-import React from "react";
 import "./BlogPostCard.css";
-import { Link } from "react-router-dom";
 
 const BlogPostCard = (props) => {
+  const { title, imgURL, description, author } = props;
   return (
-    <div>
-      <Link className="card" to={`/postcard/${props._id}`}>
-        <img
-          className="product-card-image"
-          src={props.imgURL}
-          alt={props.name}
-        />
-        <div>View</div>
-      </Link>
+    <div className="blog-div">
+      <h1>{title}</h1>
+      <img src={imgURL}></img>
+      <h2>{description}</h2>
+      <h3>{author}</h3>
     </div>
   );
 };
