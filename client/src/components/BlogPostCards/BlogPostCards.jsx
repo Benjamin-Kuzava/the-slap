@@ -13,8 +13,7 @@ const BlogPostCards = () => {
     fetchPosts();
   }, []);
   return (
-    <div>
-      <h1>Postcards</h1>
+    <div className="postcard">
       {allPosts.map((post) => (
         <BlogPostCard
           key={post._id}
