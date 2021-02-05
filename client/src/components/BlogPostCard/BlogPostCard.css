@@ -1,0 +1,10 @@
+.blog-div,
+.blog-div1,
+.blog-div2 {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  align-content: flex-start;
+  align-content: space-around;
+}
