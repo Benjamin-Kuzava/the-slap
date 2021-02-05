@@ -1,19 +1,29 @@
 import "./BlogPostCards.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getPosts } from "../../services/posts";
+import BlogPostCard from "../BlogPostCard/BlogPostCard";
 
 const BlogPostCards = () => {
-  const [Post, setPost] = useState({
-    title: "asdf",
-    imgURL:
-      "https://images.unsplash.com/photo-1563826773-1e2b4b2cde42?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8Ym13fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    description: "5",
-  });
+  const [allPosts, setAllPosts] = useState([]);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const posts = await getPosts();
+      setAllPosts(posts);
+    };
+    fetchPosts();
+  }, []);
   return (
     <div>
-      {/* <Link className="card" to={`/blogpost/${props._id}`}>
-        <img className="blog-card-image" src={props.imgURL} alt={props.name} />
-      </Link> */}
       <h1>Postcards</h1>
+      {allPosts.map((post) => (
+        <BlogPostCard
+          key={post._id}
+          title={post.title}
+          description={post.description}
+          imgURL={post.imgURL}
+          author={post.author}
+        />
+      ))}
     </div>
   );
 };

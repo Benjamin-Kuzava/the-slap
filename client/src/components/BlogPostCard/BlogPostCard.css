@@ -1,6 +1,4 @@
-.blog-div,
-.blog-div1,
-.blog-div2 {
+.blog-div {
   background-color: aliceblue;
   display: flex;
   flex-direction: column;

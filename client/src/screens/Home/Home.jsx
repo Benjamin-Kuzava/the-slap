@@ -1,13 +1,13 @@
 import React from "react";
 import "./Home.css";
-import BlogPostCard from "../../components/BlogPostCard/BlogPostCard";
+import BlogPostCards from "../../components/BlogPostCards/BlogPostCards";
 import Layout from "../../components/shared/Layout/Layout";
 
 const Home = () => {
   return (
     <Layout>
       <div>
-        <BlogPostCard />
+        <BlogPostCards />
       </div>
     </Layout>
   );
