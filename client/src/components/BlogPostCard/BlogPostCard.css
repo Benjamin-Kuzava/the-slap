@@ -7,7 +7,7 @@
   border: 1px solid #e0e0e0;
   box-shadow: 4px 4px #cfcfcf;
   border-radius: 4px;
-  width: 20vw;
+  max-width: 20vw;
   margin-top: 15vh;
   margin-right: 2vw;
   margin-left: 2vw;
