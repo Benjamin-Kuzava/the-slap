@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../components/shared/Layout/Layout";
-import { createPost } from "../../services/posts";
-import { Redirect } from "react-router-dom";
-import "./BlogPostCreate.css";
+import { getPost, updatePost } from "../../services/posts";
+import { useParams, Redirect } from "react-router-dom";
+import "./BlogPostEdit.css";
 
-const BlogPostCreate = () => {
+const BlogPostEdit = (props) => {
   const [post, setPost] = useState({
     title: "",
     imgURL: "",
@@ -12,7 +12,16 @@ const BlogPostCreate = () => {
     author: "",
   });
 
-  const [isCreated, setIsCreated] = useState(false);
+  const [isUpdated, setUpdated] = useState(false);
+  let { id } = useParams();
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const post = await getPost(id);
+      setPost(post);
+    };
+    fetchPost();
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,16 +33,16 @@ const BlogPostCreate = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const created = await createPost(post);
-    setIsCreated({ created });
+    let { id } = props.match.params;
+    const updated = await updatePost(id, post);
+    setUpdated(updated);
   };
 
   const { title, imgURL, description, author } = post;
 
-  if (isCreated) {
-    return <Redirect to={`/`} />;
+  if (isUpdated) {
+    return <Redirect to={`/blogs/${props.match.params.id}`} />;
   }
-
   return (
     <Layout>
       <form className="blog-form">
@@ -77,11 +86,11 @@ const BlogPostCreate = () => {
           name="author"
         />
         <button className="form-item button" onClick={handleSubmit}>
-          Submit
+          Update
         </button>
       </form>
     </Layout>
   );
 };
 
-export default BlogPostCreate;
+export default BlogPostEdit;

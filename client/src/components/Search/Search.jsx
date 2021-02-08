@@ -3,13 +3,13 @@ import "./Search.css";
 
 const Search = (props) => {
   return (
-    <form className="search-form" onSubmit={(e) => props.onSubmit(e)}>
+    <form className="search-form">
       <input
         className="search-input"
         value={props.value}
-        onChange={(e) => props.onChange(e)}
+        // onChange={(e) => props.onChange(e)}
         name="Search"
-        placeholder="Search"
+        placeholder="Out of Order. See P3 for a working boi"
         type="text"
         autoFocus
       />
