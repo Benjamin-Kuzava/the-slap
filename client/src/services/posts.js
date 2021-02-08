@@ -9,9 +9,9 @@ export const getPosts = async () => {
   }
 };
 
-export const getPosts = async (id) => {
+export const getPost = async (id) => {
   try {
-    const response = await api.get(`/post/${id}`);
+    const response = await api.get(`/posts/${id}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -20,7 +20,7 @@ export const getPosts = async (id) => {
 
 export const createPost = async (post) => {
   try {
-    const response = await api.post("/posts", product);
+    const response = await api.post("/posts", post);
     return response.data;
   } catch (error) {
     throw error;
@@ -29,7 +29,7 @@ export const createPost = async (post) => {
 
 export const updatePost = async (id, post) => {
   try {
-    const response = await api.put(`/posts/${id}`, product);
+    const response = await api.put(`/posts/${id}`, post);
     return response.data;
   } catch (error) {
     throw error;
